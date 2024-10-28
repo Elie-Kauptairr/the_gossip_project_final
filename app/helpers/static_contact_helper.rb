@@ -1,0 +1,2 @@
+module StaticContactHelper
+end
