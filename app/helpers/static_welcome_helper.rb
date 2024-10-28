@@ -1,0 +1,2 @@
+module StaticWelcomeHelper
+end

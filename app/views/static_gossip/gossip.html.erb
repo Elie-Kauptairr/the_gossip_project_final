@@ -1,4 +1,6 @@
-<h1>StaticGossip#gossip</h1>
-<p>Find me in app/views/static_gossip/gossip.html.erb</p>
+<%= @gossip.title %></strong>: 
+<%= @gossip.content %>
 
-<%= @gossip.title %></strong>: <%= @gossip.content %> - <%= @gossip.user.first_name %>
+<%= link_to "/static_profil/profil/#{@gossip.id}" do %>
+<%= @gossip.user.first_name %>
+<% end %>

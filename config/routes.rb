@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get "static_profil/profil/:user", to: 'static_profil#profil'
+  get "static_welcome/welcome/:hide", to: 'static_welcome#welcome'
   get "static_gossip/gossip/:id", to: 'static_gossip#gossip'
+
 
   get "static_contact/contact"
   get "static_team/team"

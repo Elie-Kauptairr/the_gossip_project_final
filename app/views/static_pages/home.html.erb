@@ -1,25 +1,39 @@
-<h1>Bienvenue sur notre site de Gossips</h1>
-<p>Ceci est la page daccueil de notre application.</p>
+<html>
+  <head>
+    <title>Créer un potin</title>
+    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+  <header>
+    <div class="menu">
+
+    <%= link_to "Home", static_pages_home_path, class: "lien" %>
+    <%= link_to "Contact", static_contact_contact_path, class: "lien" %>
+    <%=  link_to "Team", static_team_team_path, class: "lien" %>
+
+    </div>
+  </header>
 
 <h2>Liste des Gossips</h2>
-<ul>
-  <% @gossips.each do |gossip| %>
 
 
-    
-    <%= link_to "/static_gossip/gossip/#{gossip.id}" do %>
-      <li>
-        <%= gossip.title %></strong>: <%= gossip.content %> - <%= gossip.user.first_name %>
-      </li>
+
+    <%  @gossips.each do |gossip| %>
+ <div class="gossiphome">
+      <div class="headergossip">
+      <p class="infogossip"><%= gossip.user.first_name %></p>
+      <p>#<%= gossip.id %> </p>
+      </div>
+      <p class="textgossip"><%= gossip.content %></p>
+      <%= link_to "Voir", "/static_gossip/gossip/#{gossip.id}", class: "btn" %>
     <% end %>
+  </div>
 
 
 
-  <% end %>
-</ul>
 
 
 
-<%= link_to "contact", static_contact_contact_path %>
-
-<%= link_to "team", static_team_team_path %>
+</body>
+</html>
